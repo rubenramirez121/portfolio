@@ -93,8 +93,8 @@ export default function Hero() {
               className="text-[#FAF8F5]/50 leading-relaxed mb-7 text-[15px]"
               style={{ fontWeight: 300 }}
             >
-              Desarrollo, pruebo y despliego servicios backend en entornos críticos, donde un fallo
-              se nota al instante. Bash, Java, Python y MySQL sobre Linux.
+              Desarrollo, pruebo y despliego servicios backend en entornos críticos.
+              Bash, Java, Python y MySQL sobre Linux.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-7 gap-y-5">
