@@ -84,7 +84,7 @@ export default function Hero() {
             className="md:col-span-5 font-serif italic text-[#FAF8F5]/80 leading-[1.2]"
             style={{ fontSize: 'clamp(1.25rem, 2vw, 1.65rem)' }}
           >
-            Backend Developer. Construyo servicios fiables, del código a producción.
+            Backend Developer. Desarrollo de servicios y puesta en producción.
           </p>
 
           <div className="md:col-span-6 md:col-start-7">
