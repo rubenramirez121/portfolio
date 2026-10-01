@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0D0D12;
+  color: #FAF8F5;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #C9A84C;
+  color: #0D0D12;
+}
+
+section[id], footer[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Subrayado que se dibuja de izquierda a derecha */
+.link-draw {
+  position: relative;
+  transition: color 0.25s ease;
+}
+.link-draw::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: #C9A84C;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-draw:hover::after,
+.link-draw:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Indicador de scroll: una gota de luz que baja por la línea */
+.scroll-cue {
+  animation: scroll-cue 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes scroll-cue {
+  0%   { transform: translateY(-100%); }
+  60%  { transform: translateY(100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Experiencia: el puesto se "enciende" cuando el raíl dorado lo alcanza */
+.exp-item.is-active .exp-company { color: #FAF8F5; }
+.exp-item.is-active .exp-node {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.12), 0 0 18px rgba(201, 168, 76, 0.5);
+}
+
+/* Paquete de señal recorriendo las capas del stack */
+.packet {
+  animation: packet 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes packet {
+  0%   { top: 0%;   opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A84C;
+  border-radius: 2px;
+}
